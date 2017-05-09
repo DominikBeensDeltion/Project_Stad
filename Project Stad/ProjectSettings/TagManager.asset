@@ -12,6 +12,7 @@ TagManager:
   - Pingufish
   - Shopbuttontext
   - Gamemanager
+  - UIManager
   layers:
   - Default
   - TransparentFX

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AttackShuriken : MonoBehaviour
 {
+
+    public UIManager uim;
     public int totalAmmo;
     public int currentAmmo;
     public int clipSize;
@@ -18,6 +20,7 @@ public class AttackShuriken : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        uim = GameObject.FindWithTag("UIManager").GetComponent<UIManager>();
     }
 
     void Update()
@@ -37,6 +40,14 @@ public class AttackShuriken : MonoBehaviour
 
                 currentAmmo--;
                 totalAmmo--;
+            }
+        }
+
+        if (totalAmmo == 0 && Input.GetButton("Fire1"))
+        {
+            if (!uim.noticePanelActive)
+            {
+                StartCoroutine(uim.NoticePopUp("Out of ammo!", 2));
             }
         }
     }

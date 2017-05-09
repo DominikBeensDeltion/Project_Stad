@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,6 +25,11 @@ public class UIManager : MonoBehaviour
     public Text currentAmmoText;            //TEMP
     public Text totalAmmoText;              //TEMP
     public AttackShuriken attackShurken;    //TEMP
+
+    [Header("Notice Panel")]
+    public GameObject noticeTextPanel;
+    public Text noticeText;
+    public bool noticePanelActive;
 
     void Update()
     {
@@ -52,6 +58,11 @@ public class UIManager : MonoBehaviour
         {
             StartCoroutine(PauseGame());
         }
+    }
+
+    internal void StartCoroutine()
+    {
+        throw new NotImplementedException();
     }
 
     public IEnumerator FadeIn()
@@ -98,5 +109,17 @@ public class UIManager : MonoBehaviour
             gamePaused = false;
             canPause = true;
         }
+    }
+
+    public IEnumerator NoticePopUp(string noticetext, float f)
+    {
+        noticePanelActive = true;
+        noticeText.text = noticetext;
+        noticeTextPanel.SetActive(true);
+
+        yield return new WaitForSeconds(f);
+
+        noticeTextPanel.SetActive(false);
+        noticePanelActive = false;
     }
 }
