@@ -9,6 +9,7 @@ public class Charactercontroller : MonoBehaviour
     public float jumpForce;
     public Rigidbody2D rb;
     bool facRight = true;
+    public static bool flipping;
 
     void Start()
     {
@@ -62,6 +63,7 @@ public class Charactercontroller : MonoBehaviour
 
     void Flip()
     {
+        flipping = true;
         facRight = !facRight;
         Vector3 scale = transform.localScale;
         scale.x *= -1;

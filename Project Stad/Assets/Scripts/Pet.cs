@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Pet : MonoBehaviour {
     public List<string> randomSpeech = new List<string>();
+    public GameObject petPos;
     public string saydis;
     public GameObject player;
     public int speechInterval;
@@ -20,7 +21,9 @@ public class Pet : MonoBehaviour {
     public bool giveWepskill;
     public int skillTogive;
     public float timeTogiveskill;
-
+    public float stopRange;
+    public float moveSpeed;
+    bool facRight = true;
     // Use this for initialization
     void Start () {
         GiveStats();
@@ -29,6 +32,7 @@ public class Pet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        MoveToPlayer();
         if (iscalcing == false)
         {
             StartCoroutine("Saystuff");
@@ -126,8 +130,7 @@ public class Pet : MonoBehaviour {
     }
 
     void Givhp()
-    {
-        
+    { 
         player.GetComponent<Stats>().health += skillTogive;
     }
 
@@ -148,4 +151,30 @@ public class Pet : MonoBehaviour {
         
         player.GetComponent<Stats>().weaponskill += skillTogive;
     }
+
+    void Flip()
+    {
+        facRight = !facRight;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
+    }
+
+    void MoveToPlayer()
+    {
+        Physics2D.IgnoreLayerCollision(11, 10);
+        Physics2D.IgnoreLayerCollision(11, 8);
+        if (Vector2.Distance(transform.position, player.transform.position) > stopRange)
+        {
+            transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), player.transform.position, moveSpeed * Time.deltaTime);
+        }
+        if (Charactercontroller.flipping)
+        {
+            Flip();
+            Charactercontroller.flipping = false;
+        }
+    }
+
+
+
 }

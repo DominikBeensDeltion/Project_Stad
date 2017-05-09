@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4546186718978534}
   - component: {fileID: 212697186390999456}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 224926219958912654}
   - component: {fileID: 222196926152258584}
   - component: {fileID: 114391643711078234}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 223876140327159928}
   - component: {fileID: 114219143619624162}
   - component: {fileID: 114166769314491964}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 212199011640401564}
   - component: {fileID: 70023843741468524}
   - component: {fileID: 114735691355394402}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4808291800276034}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SwordPivot
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 114215546588477014}
   - component: {fileID: 61712076050449904}
   - component: {fileID: 50395482550657284}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TestEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}

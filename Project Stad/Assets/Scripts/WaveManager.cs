@@ -11,7 +11,7 @@ public class WaveManager : MonoBehaviour
     public int nextWave;
 
     public int maxEnemiesToSpawn;
-    public int currenAmountOfEnemies;
+    public int currentAmountOfEnemies;
     public int enemySpawnInterval;
 
     public float nextWaveCountDown = 120f;
@@ -45,6 +45,14 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown("g"))
+        {
+            GameObject[] ems = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach(GameObject g in ems)
+            {
+                Destroy(g);
+            }
+        }
         if (canCountDown)
         {
             nextWaveCountDown -= Time.deltaTime;
@@ -63,7 +71,7 @@ public class WaveManager : MonoBehaviour
 
         if (canSpawn)
         {
-            if (currenAmountOfEnemies < maxEnemiesToSpawn)
+            if (currentAmountOfEnemies < maxEnemiesToSpawn)
             {
                 StartCoroutine(SpawnEnemies());
             }
@@ -72,34 +80,40 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator SpawnEnemies()
     {
-        canSpawn = false;
-        float x = Random.value;
-
-        if (x > 0.5)
+        if (inWave)
         {
-            int i = Random.Range(0, enemies.Count);
-            Instantiate(enemies[i], spawnPosOne, Quaternion.identity);
-            currenAmountOfEnemies++;
+            canSpawn = false;
+            float x = Random.value;
+
+            if (x > 0.5)
+            {
+                int i = Random.Range(0, enemies.Count);
+                Instantiate(enemies[i], spawnPosOne, Quaternion.identity);
+                currentAmountOfEnemies++;
+            }
+            else if (x <= 0.5)
+            {
+                int i = Random.Range(0, enemies.Count);
+                Instantiate(enemies[i], spawnPosTwo, Quaternion.identity);
+                currentAmountOfEnemies++;
+            }
+
+            yield return new WaitForSeconds(enemySpawnInterval);
+            canSpawn = true;
         }
-        else if (x <= 0.5)
-        {
-            int i = Random.Range(0, enemies.Count);
-            Instantiate(enemies[i], spawnPosTwo, Quaternion.identity);
-            currenAmountOfEnemies++;
-        }                 
-
-        yield return new WaitForSeconds(enemySpawnInterval);
-        canSpawn = true;
+        
     }
 
     public void EndWave()
     {
+        //WARNING BUG als je de eerste enemy killed voordat de 2e spawned end de wave
         GameObject[] currentEms = GameObject.FindGameObjectsWithTag("Enemy");
         if (currentEms.Length <= 0)
         {
             inWave = false;
             canCountDown = true;
             nextWaveCountDown = timeToNextWave;
+            currentAmountOfEnemies = 0;
         }           
     }
 }
