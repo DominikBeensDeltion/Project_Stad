@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+
+    [Header("Player")]
+    public GameObject player;
+
     [Header("Fade")]
     public Image fadeOverlay;
 
@@ -26,10 +30,19 @@ public class UIManager : MonoBehaviour
     public Text totalAmmoText;              //TEMP
     public AttackShuriken attackShurken;    //TEMP
 
-    [Header("Notice Panel")]
+    [Header("Notice")]
     public GameObject noticeTextPanel;
     public Text noticeText;
     public bool noticePanelActive;
+
+    [Header("Stats")]
+    public GameObject statsPanel;
+    public Text statsText;
+
+    void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+    }
 
     void Update()
     {
@@ -58,6 +71,8 @@ public class UIManager : MonoBehaviour
         {
             StartCoroutine(PauseGame());
         }
+
+        //statsText.text = player.GetComponent<Player>().GetType<TestStats>().currentHealth.ToString();
     }
 
     internal void StartCoroutine()

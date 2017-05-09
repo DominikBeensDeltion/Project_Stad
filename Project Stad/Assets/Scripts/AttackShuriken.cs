@@ -20,7 +20,7 @@ public class AttackShuriken : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        uim = GameObject.FindWithTag("UIManager").GetComponent<UIManager>();
+        uim = GameObject.FindWithTag("UIM").GetComponent<UIManager>();
     }
 
     void Update()

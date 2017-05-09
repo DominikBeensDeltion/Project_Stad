@@ -11,8 +11,8 @@ TagManager:
   - Enemy
   - Pingufish
   - Shopbuttontext
-  - Gamemanager
-  - UIManager
+  - GM
+  - UIM
   layers:
   - Default
   - TransparentFX

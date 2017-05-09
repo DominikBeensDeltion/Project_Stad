@@ -69,7 +69,7 @@ public class Enemy : MonoBehaviour
 
     public void OnDestroy()
     {
-        GameObject gameManager = GameObject.FindGameObjectWithTag("Gamemanager");
+        GameObject gameManager = GameObject.FindGameObjectWithTag("GM");
         if(gameManager != null)
         {
             gameManager.GetComponent<WaveManager>().EndWave();
