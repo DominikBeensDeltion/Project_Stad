@@ -11,7 +11,7 @@ public class WaveManager : MonoBehaviour
     public int nextWave;
 
     public int maxEnemiesToSpawn;
-    public int currenAmountOfEnemies;
+    public int currentSpawnedEnemies;
     public int enemySpawnInterval;
 
     public float nextWaveCountDown = 120f;
@@ -63,7 +63,7 @@ public class WaveManager : MonoBehaviour
 
         if (canSpawn)
         {
-            if (currenAmountOfEnemies < maxEnemiesToSpawn)
+            if (currentSpawnedEnemies < maxEnemiesToSpawn)
             {
                 StartCoroutine(SpawnEnemies());
             }
@@ -79,13 +79,13 @@ public class WaveManager : MonoBehaviour
         {
             int i = Random.Range(0, enemies.Count);
             Instantiate(enemies[i], spawnPosOne, Quaternion.identity);
-            currenAmountOfEnemies++;
+            currentSpawnedEnemies++;
         }
         else if (x <= 0.5)
         {
             int i = Random.Range(0, enemies.Count);
             Instantiate(enemies[i], spawnPosTwo, Quaternion.identity);
-            currenAmountOfEnemies++;
+            currentSpawnedEnemies++;
         }                 
 
         yield return new WaitForSeconds(enemySpawnInterval);
