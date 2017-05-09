@@ -1874,6 +1874,16 @@ Prefab:
       propertyPath: speechBubble
       value: 
       objectReference: {fileID: 960486705}
+    - target: {fileID: 114096524479492718, guid: 0b051234c8f74324887b7f61b49d8601,
+        type: 2}
+      propertyPath: stopRange
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114096524479492718, guid: 0b051234c8f74324887b7f61b49d8601,
+        type: 2}
+      propertyPath: moveSpeed
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0b051234c8f74324887b7f61b49d8601, type: 2}
   m_IsPrefabParent: 0
@@ -4584,7 +4594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uim: {fileID: 0}
-  totalAmmo: 5
+  totalAmmo: 60
   currentAmmo: 3
   clipSize: 3
   reloadTime: 1
@@ -4692,7 +4702,6 @@ MonoBehaviour:
   currentWave: 0
   nextWave: 1
   maxEnemiesToSpawn: 5
-  currentAmountOfEnemies: 0
   currentSpawnedEnemies: 0
   enemySpawnInterval: 2
   nextWaveCountDown: 120

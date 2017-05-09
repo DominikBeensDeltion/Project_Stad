@@ -11,7 +11,7 @@ public class WaveManager : MonoBehaviour
     public int nextWave;
 
     public int maxEnemiesToSpawn;
-    public int currentAmountOfEnemies;
+    //public int currentAmountOfEnemies;
     public int currentSpawnedEnemies;
     public int enemySpawnInterval;
 
@@ -90,13 +90,13 @@ public class WaveManager : MonoBehaviour
             {
                 int i = Random.Range(0, enemies.Count);
                 Instantiate(enemies[i], spawnPosOne, Quaternion.identity);
-                currentAmountOfEnemies++;
+                currentSpawnedEnemies++;
             }
             else if (x <= 0.5)
             {
                 int i = Random.Range(0, enemies.Count);
                 Instantiate(enemies[i], spawnPosTwo, Quaternion.identity);
-                currentAmountOfEnemies++;
+                currentSpawnedEnemies++;
             }
 
             yield return new WaitForSeconds(enemySpawnInterval);
@@ -113,7 +113,7 @@ public class WaveManager : MonoBehaviour
             inWave = false;
             canCountDown = true;
             nextWaveCountDown = timeToNextWave;
-            currentAmountOfEnemies = 0;
+            currentSpawnedEnemies = 0;
         }           
     }
 }
