@@ -1862,7 +1862,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4235541746793820, guid: 0b051234c8f74324887b7f61b49d8601, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114096524479492718, guid: 0b051234c8f74324887b7f61b49d8601,
         type: 2}
@@ -2987,7 +2987,7 @@ Transform:
   - {fileID: 739494562}
   - {fileID: 1822367302}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &711643734
 MonoBehaviour:
@@ -4419,7 +4419,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 21200000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
       propertyPath: m_SortingLayerID
@@ -4675,7 +4675,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1139557239
 MonoBehaviour:
@@ -4692,6 +4692,7 @@ MonoBehaviour:
   currentWave: 0
   nextWave: 1
   maxEnemiesToSpawn: 5
+  currentAmountOfEnemies: 0
   currentSpawnedEnemies: 0
   enemySpawnInterval: 2
   nextWaveCountDown: 120

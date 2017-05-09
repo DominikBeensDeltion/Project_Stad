@@ -11,11 +11,8 @@ public class WaveManager : MonoBehaviour
     public int nextWave;
 
     public int maxEnemiesToSpawn;
-<<<<<<< HEAD
     public int currentAmountOfEnemies;
-=======
     public int currentSpawnedEnemies;
->>>>>>> origin/master
     public int enemySpawnInterval;
 
     public float nextWaveCountDown = 120f;
@@ -75,11 +72,7 @@ public class WaveManager : MonoBehaviour
 
         if (canSpawn)
         {
-<<<<<<< HEAD
-            if (currentAmountOfEnemies < maxEnemiesToSpawn)
-=======
             if (currentSpawnedEnemies < maxEnemiesToSpawn)
->>>>>>> origin/master
             {
                 StartCoroutine(SpawnEnemies());
             }
@@ -88,28 +81,10 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator SpawnEnemies()
     {
-<<<<<<< HEAD
         if (inWave)
         {
             canSpawn = false;
             float x = Random.value;
-=======
-        canSpawn = false;
-        float x = Random.value;
-
-        if (x > 0.5)
-        {
-            int i = Random.Range(0, enemies.Count);
-            Instantiate(enemies[i], spawnPosOne, Quaternion.identity);
-            currentSpawnedEnemies++;
-        }
-        else if (x <= 0.5)
-        {
-            int i = Random.Range(0, enemies.Count);
-            Instantiate(enemies[i], spawnPosTwo, Quaternion.identity);
-            currentSpawnedEnemies++;
-        }                 
->>>>>>> origin/master
 
             if (x > 0.5)
             {
@@ -126,8 +101,7 @@ public class WaveManager : MonoBehaviour
 
             yield return new WaitForSeconds(enemySpawnInterval);
             canSpawn = true;
-        }
-        
+        }      
     }
 
     public void EndWave()
