@@ -23,7 +23,9 @@ GameObject:
   - component: {fileID: 95277411043333258}
   - component: {fileID: 114171056206918554}
   - component: {fileID: 61985874161353270}
-  m_Layer: 0
+  - component: {fileID: 50811486485545484}
+  - component: {fileID: 61995219697996042}
+  m_Layer: 11
   m_Name: Blooob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,12 +39,32 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1498487906756394}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.82414514, y: -0.23143828, z: 0}
+  m_LocalPosition: {x: -2.1955833, y: -2.3566427, z: 0}
   m_LocalScale: {x: 0.5644829, y: 0.56448364, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50811486485545484
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1498487906756394}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!61 &61985874161353270
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -67,6 +89,31 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 12, y: 12}
+  m_EdgeRadius: 0
+--- !u!61 &61995219697996042
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1498487906756394}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.03, y: 2.03}
+    newSize: {x: 2.03, y: 2.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.03, y: 2.03}
   m_EdgeRadius: 0
 --- !u!95 &95277411043333258
 Animator:
@@ -99,8 +146,9 @@ MonoBehaviour:
   randomSpeech:
   - Heil hitler
   - Heil KKK
+  petPos: {fileID: 0}
   saydis: 
-  player: {fileID: 0}
+  player: {fileID: 100002, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
   speechInterval: 10
   fadeInterval: 5
   attackSpeed: 4
@@ -115,6 +163,8 @@ MonoBehaviour:
   giveWepskill: 0
   skillTogive: 1
   timeTogiveskill: 30
+  stopRange: 1.5
+  moveSpeed: 9
 --- !u!212 &212192717497802854
 SpriteRenderer:
   m_ObjectHideFlags: 1

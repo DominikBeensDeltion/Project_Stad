@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public UIManager uim;
     public WaveManager wm;
 
+    public static int money;
     private void Start()
     {
         uim = GameObject.FindWithTag("UIM").GetComponent<UIManager>();
