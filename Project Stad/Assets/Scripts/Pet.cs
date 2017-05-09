@@ -64,7 +64,7 @@ public class Pet : MonoBehaviour {
         yield return new WaitForSeconds(attackSpeed);
         if (targetEnemy != null)
         {
-            targetEnemy.GetComponent<Stats>().health -= attackDamage;
+            targetEnemy.GetComponent<StatsOld>().health -= attackDamage;
         }
         
         attacking = false;
@@ -131,25 +131,25 @@ public class Pet : MonoBehaviour {
 
     void Givhp()
     { 
-        player.GetComponent<Stats>().health += skillTogive;
+        player.GetComponent<StatsOld>().health += skillTogive;
     }
 
     void Givdf()
     {
         
-        player.GetComponent<Stats>().defense += skillTogive;
+        player.GetComponent<StatsOld>().defense += skillTogive;
     }
 
     void Givsp()
     {
         
-        player.GetComponent<Stats>().speed += skillTogive;
+        player.GetComponent<StatsOld>().speed += skillTogive;
     }
 
     void Givwpsk()
     {
         
-        player.GetComponent<Stats>().weaponskill += skillTogive;
+        player.GetComponent<StatsOld>().weaponskill += skillTogive;
     }
 
     void Flip()

@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Stats
 {
 
-    TestStats stats = new TestStats();
-
+    
     private void Start()
     {
-        stats.currentHealth = 100;
+        
+    }
+
+    private void Update()
+    {
+
     }
 }

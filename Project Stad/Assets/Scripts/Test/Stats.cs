@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestStats
+[System.Serializable]
+public class Stats
 {
 
     public int maxHealth;

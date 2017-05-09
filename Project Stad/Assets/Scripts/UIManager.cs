@@ -38,10 +38,12 @@ public class UIManager : MonoBehaviour
     [Header("Stats")]
     public GameObject statsPanel;
     public Text statsText;
+    //public Player playerScript;
 
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        //playerScript = player.GetComponent<Player>();
     }
 
     void Update()
@@ -72,7 +74,7 @@ public class UIManager : MonoBehaviour
             StartCoroutine(PauseGame());
         }
 
-        //statsText.text = player.GetComponent<Player>().GetType<TestStats>().currentHealth.ToString();
+        statsText.text = "Health: " + player.GetComponent<Entity>().stats.currentHealth;
     }
 
     internal void StartCoroutine()
