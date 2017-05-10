@@ -77,8 +77,8 @@ public class UIManager : MonoBehaviour
         statsText.text = "Max Health: " + player.GetComponent<Entity>().stats.maxHealth + "\n" +
                          "Attack Damage: " + player.GetComponent<Entity>().stats.attackDamage + "\n" +
                          "Atack Range: " + player.GetComponent<Entity>().stats.attackRange + "\n" +
-                         "Jump Height: " + player.GetComponent<Entity>().stats.jumpForce + "\n" +
                          "Movement Speed: " + player.GetComponent<Entity>().stats.moveSpeed + "\n" +
+                         "Jump Height: " + player.GetComponent<Entity>().stats.jumpForce + "\n" +
                          "Defence: " + player.GetComponent<Entity>().stats.defence;
     }
 
