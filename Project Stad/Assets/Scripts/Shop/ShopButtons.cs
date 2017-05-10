@@ -24,7 +24,9 @@ public class ShopButtons : MonoBehaviour
         switch (buttonIndex)
         {
             case 1:
-                gameObject.GetComponentInChildren<Text>().text = "Max Health Upgrade"; // + cost, same for the rest
+                gameObject.GetComponentInChildren<Text>().text = "Max Health Upgrade";
+                //assign sprite
+                //assign cost
                 break;
             case 2:
                 gameObject.GetComponentInChildren<Text>().text = "Attack Damage Upgrade";
@@ -52,7 +54,7 @@ public class ShopButtons : MonoBehaviour
             {
                 case 1:
                     player.GetComponent<Entity>().stats.maxHealth += 25;
-                    //decrease currency, increase cost, same for the rest
+                    //decrease currency
                     break;
                 case 2:
                     player.GetComponent<Entity>().stats.attackDamage += 10;
