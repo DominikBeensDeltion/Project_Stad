@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Pet : MonoBehaviour {
     public List<string> randomSpeech = new List<string>();
-    public GameObject petPos;
     public string saydis;
     public GameObject player;
     public int speechInterval;
@@ -65,7 +64,7 @@ public class Pet : MonoBehaviour {
         yield return new WaitForSeconds(attackSpeed);
         if (targetEnemy != null)
         {
-            targetEnemy.GetComponent<Entity>().stats.maxHealth -= attackDamage;
+            targetEnemy.GetComponent<Enemy>().DealDamage(attackDamage);
         }
         
         attacking = false;
@@ -77,7 +76,7 @@ public class Pet : MonoBehaviour {
         if(other.tag == "Enemy")
         {
            
-            if (Physics2D.Raycast(transform.position, other.transform.position, 5))
+            if (Physics2D.Raycast(transform.position, -other.transform.position, 5))
             {
                 if(attacking == false)
                 {
@@ -90,10 +89,13 @@ public class Pet : MonoBehaviour {
         }
     }
 
-    public void OnTriggerExit2D()
+    public void OnTriggerExit2D(Collider2D other)
     {
-        attacking = false;
-        targetEnemy = null;
+        if (other.tag == "Enemy")
+        {
+            attacking = false;
+            targetEnemy = null;
+        }
     }
 
     public void OnDestroy()
@@ -101,6 +103,22 @@ public class Pet : MonoBehaviour {
         CancelInvoke();
         attacking = false;
         targetEnemy = null;
+    }
+
+    public void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.tag == "Enemy")
+        {
+            Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), col.gameObject.GetComponent<Collider2D>());
+        }
+    }
+
+    public void OnCollisionExit2D(Collision2D col)
+    {
+        if(col.gameObject.tag == "Enemy")
+        {
+            Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), col.gameObject.GetComponent<Collider2D>(), false);
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -169,7 +187,7 @@ public class Pet : MonoBehaviour {
 
     void MoveToPlayer()
     {
-        Physics2D.IgnoreLayerCollision(11, 10);
+        
         Physics2D.IgnoreLayerCollision(11, 8);
         if (Vector2.Distance(transform.position, player.transform.position) > stopRange)
         {
