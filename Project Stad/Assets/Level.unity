@@ -2126,12 +2126,21 @@ Prefab:
     - target: {fileID: 114096524479492718, guid: 0b051234c8f74324887b7f61b49d8601,
         type: 2}
       propertyPath: timeTogiveskill
+<<<<<<< HEAD
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114096524479492718, guid: 0b051234c8f74324887b7f61b49d8601,
+        type: 2}
+      propertyPath: giveDef
+      value: 1
+=======
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 114096524479492718, guid: 0b051234c8f74324887b7f61b49d8601,
         type: 2}
       propertyPath: givemaxHp
       value: 0
+>>>>>>> origin/master
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0b051234c8f74324887b7f61b49d8601, type: 2}
@@ -3394,7 +3403,7 @@ MonoBehaviour:
   triggerText: {fileID: 1978332858}
   triggerTextInput: Press E to enter the attributes shop
   amountOfButtons: 3
-  buttonPrefab: {fileID: 1226672085890018, guid: 69e325ac05d3ff3498056f20ab36667a,
+  buttonPrefab: {fileID: 1099156168254062, guid: 69e325ac05d3ff3498056f20ab36667a,
     type: 2}
   exitShopButtonSpawn: {fileID: 1051382012}
   exitShopButton: {fileID: 1592034389381208, guid: e76ffe293e96d0847a0f775f176efd12,
@@ -5088,7 +5097,7 @@ MonoBehaviour:
   triggerText: {fileID: 1978332858}
   triggerTextInput: Press E to enter the pet shop
   amountOfButtons: 6
-  buttonPrefab: {fileID: 1226672085890018, guid: 69e325ac05d3ff3498056f20ab36667a,
+  buttonPrefab: {fileID: 1099156168254062, guid: 69e325ac05d3ff3498056f20ab36667a,
     type: 2}
   exitShopButtonSpawn: {fileID: 1051382012}
   exitShopButton: {fileID: 1592034389381208, guid: e76ffe293e96d0847a0f775f176efd12,
