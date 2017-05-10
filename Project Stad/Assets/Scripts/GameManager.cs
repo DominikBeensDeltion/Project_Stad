@@ -9,7 +9,10 @@ public class GameManager : MonoBehaviour
     public WaveManager wm;
     public Animator statsPanelAnim;
 
+    public bool isAbleToAttack = true;
+
     public static int money;
+
     private void Start()
     {
         uim = GameObject.FindWithTag("UIM").GetComponent<UIManager>();

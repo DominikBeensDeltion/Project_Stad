@@ -3379,6 +3379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad21ecbfa6411c04ba25fed03c0cada6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   triggerTextObject: {fileID: 1673469793}
   triggerText: {fileID: 1978332858}
   triggerTextInput: Press E to enter the attributes shop
@@ -4914,8 +4915,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c9844cba2376c49836f4468e249e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   uim: {fileID: 0}
-  totalAmmo: 20
+  totalAmmo: 60
   currentAmmo: 3
   clipSize: 3
   reloadTime: 1
@@ -4985,6 +4987,7 @@ MonoBehaviour:
   uim: {fileID: 711643734}
   wm: {fileID: 1139557239}
   statsPanelAnim: {fileID: 0}
+  isAbleToAttack: 1
 --- !u!4 &1139557238
 Transform:
   m_ObjectHideFlags: 0
@@ -5070,6 +5073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad21ecbfa6411c04ba25fed03c0cada6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   triggerTextObject: {fileID: 1673469793}
   triggerText: {fileID: 1978332858}
   triggerTextInput: Press E to enter the pet shop
