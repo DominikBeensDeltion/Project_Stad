@@ -2126,12 +2126,21 @@ Prefab:
     - target: {fileID: 114096524479492718, guid: 0b051234c8f74324887b7f61b49d8601,
         type: 2}
       propertyPath: timeTogiveskill
+<<<<<<< HEAD
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114096524479492718, guid: 0b051234c8f74324887b7f61b49d8601,
         type: 2}
       propertyPath: giveDef
       value: 1
+=======
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114096524479492718, guid: 0b051234c8f74324887b7f61b49d8601,
+        type: 2}
+      propertyPath: givemaxHp
+      value: 0
+>>>>>>> origin/master
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0b051234c8f74324887b7f61b49d8601, type: 2}
