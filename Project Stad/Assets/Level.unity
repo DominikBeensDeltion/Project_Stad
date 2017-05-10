@@ -2126,7 +2126,12 @@ Prefab:
     - target: {fileID: 114096524479492718, guid: 0b051234c8f74324887b7f61b49d8601,
         type: 2}
       propertyPath: timeTogiveskill
-      value: 3
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114096524479492718, guid: 0b051234c8f74324887b7f61b49d8601,
+        type: 2}
+      propertyPath: givemaxHp
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0b051234c8f74324887b7f61b49d8601, type: 2}

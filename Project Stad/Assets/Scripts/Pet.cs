@@ -27,6 +27,7 @@ public class Pet : MonoBehaviour {
     // Use this for initialization
     void Start () {
         GiveStats();
+
     }
 	
 	// Update is called once per frame
@@ -91,6 +92,12 @@ public class Pet : MonoBehaviour {
 
     public void OnTriggerExit2D()
     {
+        attacking = false;
+        targetEnemy = null;
+    }
+
+    public void OnDestroy()
+    {
         CancelInvoke();
         attacking = false;
         targetEnemy = null;
@@ -125,6 +132,7 @@ public class Pet : MonoBehaviour {
 
         if (giveWepskill == true)
         {
+           
             InvokeRepeating("Givwpsk", timeTogiveskill, 1F);
         }
     }
@@ -136,7 +144,6 @@ public class Pet : MonoBehaviour {
 
     void Givdf()
     {
-        Debug.Log("hoi");
         player.GetComponent<Entity>().stats.defence += skillTogive;
     }
 
