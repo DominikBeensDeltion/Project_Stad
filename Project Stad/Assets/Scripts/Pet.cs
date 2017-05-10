@@ -27,11 +27,11 @@ public class Pet : MonoBehaviour {
     // Use this for initialization
     void Start () {
         GiveStats();
-
     }
 	
 	// Update is called once per frame
 	void Update () {
+        
         MoveToPlayer();
         if (iscalcing == false)
         {
@@ -64,7 +64,7 @@ public class Pet : MonoBehaviour {
         yield return new WaitForSeconds(attackSpeed);
         if (targetEnemy != null)
         {
-            targetEnemy.GetComponent<StatsOld>().health -= attackDamage;
+            targetEnemy.GetComponent<Entity>().stats.maxHealth -= attackDamage;
         }
         
         attacking = false;
@@ -130,26 +130,26 @@ public class Pet : MonoBehaviour {
     }
 
     void Givhp()
-    { 
-        player.GetComponent<StatsOld>().health += skillTogive;
+    {
+        player.GetComponent<Entity>().stats.maxHealth += skillTogive;
     }
 
     void Givdf()
     {
-        
-        player.GetComponent<StatsOld>().defense += skillTogive;
+        Debug.Log("hoi");
+        player.GetComponent<Entity>().stats.defence += skillTogive;
     }
 
     void Givsp()
     {
-        
-        player.GetComponent<StatsOld>().speed += skillTogive;
+
+        player.GetComponent<Entity>().stats.moveSpeed += skillTogive;
     }
 
     void Givwpsk()
     {
-        
-        player.GetComponent<StatsOld>().weaponskill += skillTogive;
+
+        player.GetComponent<Entity>().stats.weaponSkill += skillTogive;
     }
 
     void Flip()
