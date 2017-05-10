@@ -123,7 +123,6 @@ public class Shop : MonoBehaviour
         {
             buttons.Add(button);
             button.GetComponentInChildren<ShopButtons>().buttonIndex = buttons.Count;
-            //button.GetComponent<ShopButtons>().AssignText();
         }
     }
 

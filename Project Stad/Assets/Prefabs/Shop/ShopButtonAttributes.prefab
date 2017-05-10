@@ -246,8 +246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10262b0c3b3b02b46ae7af9776ca93a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
-  player: {fileID: 0}
   buttonIndex: 0
   attributeButton: 1
   maxHealthSprite: {fileID: 21300000, guid: f7083bd0301a3e14bb7cd4980962de2c, type: 3}

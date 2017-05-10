@@ -4976,6 +4976,7 @@ GameObject:
   - component: {fileID: 1139557238}
   - component: {fileID: 1139557237}
   - component: {fileID: 1139557239}
+  - component: {fileID: 1139557240}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GM
@@ -5039,6 +5040,29 @@ MonoBehaviour:
   timeToNextWave: 4
   spawnPosOne: {x: -77.02, y: -3.58}
   spawnPosTwo: {x: 77.02, y: -3.58}
+--- !u!114 &1139557240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1139557236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc8e5abaa303f14bbddc639a81d283f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthCost: 250
+  attackDamageCost: 250
+  attackRangeCost: 250
+  moveSpeedCost: 250
+  jumpHeightCost: 250
+  defenceCost: 250
+  maxHealthCostIncrease: 100
+  attackDamageCostIncrease: 100
+  attackRangeCostIncrease: 150
+  moveSpeedCostIncrease: 200
+  jumpHeightCostIncrease: 100
+  defenceCostIncrease: 125
 --- !u!1 &1161271955
 GameObject:
   m_ObjectHideFlags: 0
