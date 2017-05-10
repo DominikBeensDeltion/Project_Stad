@@ -3403,7 +3403,11 @@ MonoBehaviour:
   triggerText: {fileID: 1978332858}
   triggerTextInput: Press E to enter the attributes shop
   amountOfButtons: 3
+<<<<<<< HEAD
   buttonPrefab: {fileID: 1099156168254062, guid: 69e325ac05d3ff3498056f20ab36667a,
+=======
+  buttonPrefab: {fileID: 1565728285682106, guid: 69e325ac05d3ff3498056f20ab36667a,
+>>>>>>> parent of 8ef38c1... Merge branch 'master' of https://github.com/DominikBeensDeltion/Project_Stad
     type: 2}
   exitShopButtonSpawn: {fileID: 1051382012}
   exitShopButton: {fileID: 1592034389381208, guid: e76ffe293e96d0847a0f775f176efd12,
@@ -3875,8 +3879,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.6, y: 0}
-  m_SizeDelta: {x: -946.4, y: -300}
+  m_AnchoredPosition: {x: -5, y: 0}
+  m_SizeDelta: {x: -1052, y: -300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &813772806
 MonoBehaviour:
@@ -4327,8 +4331,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 7.5999756, y: 0}
-  m_SizeDelta: {x: 1716.0999, y: 100}
+  m_AnchoredPosition: {x: 5, y: 0}
+  m_SizeDelta: {x: 1309, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1044509487
 MonoBehaviour:
@@ -4722,7 +4726,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000015258789}
+  m_AnchoredPosition: {x: -0.000015258789, y: 0}
   m_SizeDelta: {x: 0, y: 2000}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &1110530751
@@ -5097,7 +5101,11 @@ MonoBehaviour:
   triggerText: {fileID: 1978332858}
   triggerTextInput: Press E to enter the pet shop
   amountOfButtons: 6
+<<<<<<< HEAD
   buttonPrefab: {fileID: 1099156168254062, guid: 69e325ac05d3ff3498056f20ab36667a,
+=======
+  buttonPrefab: {fileID: 1565728285682106, guid: 69e325ac05d3ff3498056f20ab36667a,
+>>>>>>> parent of 8ef38c1... Merge branch 'master' of https://github.com/DominikBeensDeltion/Project_Stad
     type: 2}
   exitShopButtonSpawn: {fileID: 1051382012}
   exitShopButton: {fileID: 1592034389381208, guid: e76ffe293e96d0847a0f775f176efd12,

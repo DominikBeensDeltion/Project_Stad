@@ -122,7 +122,7 @@ public class Shop : MonoBehaviour
         foreach (Transform button in scrollViewContent.transform)
         {
             buttons.Add(button);
-            button.GetComponentInChildren<ShopButtons>().buttonIndex = buttons.Count;
+            button.GetComponent<ShopButtons>().buttonIndex = buttons.Count;
             //button.GetComponent<ShopButtons>().AssignText();
         }
     }
