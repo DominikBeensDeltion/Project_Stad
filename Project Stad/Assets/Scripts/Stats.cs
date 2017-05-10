@@ -2,51 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stats : MonoBehaviour
+[System.Serializable]
+public class Stats
 {
 
-    public int health;
-    public GameObject wapen;
-    public int defense;
-    public int speed;
-    public int weaponskill;
-
-	void Start()
-    {
-        Wpskill();
-    }
-	
-	void Update()
-    {
-        //Die();
-    }
-
-    public void Die()
-    {
-        if(health <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    public void Def()
-    {
-
-    }
-
-    public void Spd()
-    {
-       
-    }
-
-    public void Wpskill()
-    {
-        foreach (Transform child in gameObject.transform)
-            if (child.CompareTag("Weapon"))
-            {
-                wapen = child.gameObject;
-            }
-       Weapon wp = wapen.GetComponent<Weapon>();
-       wp.damage += weaponskill;
-    }
+    public int maxHealth;
+    public int currentHealth;
+    public int attackDamage;
+    public float attackRange;
+    public float moveSpeed;
+    public float jumpForce;
+    public int defence;
+    public int weaponSkill;
 }

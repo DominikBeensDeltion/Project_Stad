@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
 
-    TestStats stats = new TestStats();
+    Stats stats = new Stats();
 
     public GameObject target;
     public bool canAttack = true;

@@ -7,12 +7,17 @@ public class GameManager : MonoBehaviour
 
     public UIManager uim;
     public WaveManager wm;
+    public Animator statsPanelAnim;
+
+    public bool isAbleToAttack = true;
 
     public static int money;
+
     private void Start()
     {
         uim = GameObject.FindWithTag("UIM").GetComponent<UIManager>();
         wm = GameObject.FindWithTag("GM").GetComponent<WaveManager>();
+        statsPanelAnim = uim.statsPanel.GetComponent<Animator>();
 
         uim.StartCoroutine(uim.FadeIn());
         wm.StartCountDown();
@@ -22,12 +27,12 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetButton("c"))
         {
-            uim.statsPanel.SetActive(true);
+            statsPanelAnim.SetBool("StatsPanelActive", true);
         }
 
         if (Input.GetButtonUp("c"))
         {
-            uim.statsPanel.SetActive(false);
+            statsPanelAnim.SetBool("StatsPanelActive", false);
         }
     }
 }

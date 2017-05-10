@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShopReworked : MonoBehaviour
+public class Shop : MonoBehaviour
 {
+
+    public GameManager gm;
 
     public GameObject triggerTextObject;
     public Text triggerText;
@@ -27,6 +29,7 @@ public class ShopReworked : MonoBehaviour
 
     private void Start()
     {
+        gm = GameObject.FindWithTag("GM").GetComponent<GameManager>();
         player = GameObject.FindWithTag("Player");
         defaultConstraints = player.GetComponent<Rigidbody2D>().constraints;
         anim = GetComponent<Animator>();
@@ -66,6 +69,7 @@ public class ShopReworked : MonoBehaviour
     public IEnumerator EnterShop()
     {
         shopActive = true;
+        gm.isAbleToAttack = false;
         anim.SetTrigger("OpenDoor");
         player.GetComponent<Charactercontroller>().enabled = false;
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
@@ -96,6 +100,7 @@ public class ShopReworked : MonoBehaviour
         player.GetComponent<Rigidbody2D>().constraints = defaultConstraints;
         anim.SetTrigger("CloseDoor");
         triggerTextObject.SetActive(true);
+        gm.isAbleToAttack = true;
         shopActive = false;
     }
 
@@ -112,6 +117,14 @@ public class ShopReworked : MonoBehaviour
         exitShopButtonInstantiate.GetComponent<Button>().onClick.AddListener(CloseShopButton);
 
         exitShopButtonReference = exitShopButtonInstantiate;
+
+        List<Transform> buttons = new List<Transform>();
+        foreach (Transform button in scrollViewContent.transform)
+        {
+            buttons.Add(button);
+            button.GetComponent<ShopButtons>().buttonIndex = buttons.Count;
+            //button.GetComponent<ShopButtons>().AssignText();
+        }
     }
 
     public void DestroyButtons()

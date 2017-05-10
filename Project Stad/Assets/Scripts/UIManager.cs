@@ -38,10 +38,12 @@ public class UIManager : MonoBehaviour
     [Header("Stats")]
     public GameObject statsPanel;
     public Text statsText;
+    //public Player playerScript;
 
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        //playerScript = player.GetComponent<Player>();
     }
 
     void Update()
@@ -72,7 +74,12 @@ public class UIManager : MonoBehaviour
             StartCoroutine(PauseGame());
         }
 
-        //statsText.text = player.GetComponent<Player>().GetType<TestStats>().currentHealth.ToString();
+        statsText.text = "Max Health: " + player.GetComponent<Entity>().stats.maxHealth + "\n" +
+                         "Attack Damage: " + player.GetComponent<Entity>().stats.attackDamage + "\n" +
+                         "Atack Range: " + player.GetComponent<Entity>().stats.attackRange + "\n" +
+                         "Jump Height: " + player.GetComponent<Entity>().stats.jumpForce + "\n" +
+                         "Movement Speed: " + player.GetComponent<Entity>().stats.moveSpeed + "\n" +
+                         "Defence: " + player.GetComponent<Entity>().stats.defence;
     }
 
     internal void StartCoroutine()

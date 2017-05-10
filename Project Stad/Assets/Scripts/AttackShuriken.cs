@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackShuriken : MonoBehaviour
 {
 
+    public GameManager gm;
     public UIManager uim;
     public int totalAmmo;
     public int currentAmmo;
@@ -19,35 +20,38 @@ public class AttackShuriken : MonoBehaviour
 
     void Start()
     {
+        gm = GameObject.FindWithTag("GM").GetComponent<GameManager>();
         player = GameObject.FindWithTag("Player");
         uim = GameObject.FindWithTag("UIM").GetComponent<UIManager>();
     }
 
     void Update()
     {
-        if (totalAmmo > 0)
+        if (gm.isAbleToAttack)
         {
-            if (currentAmmo <= 0 && !isReloading)
+            if (currentAmmo > 0 || totalAmmo > 0)
             {
-                canFire = false;
-                StartCoroutine(Reload());
+                if (currentAmmo <= 0 && !isReloading)
+                {
+                    canFire = false;
+                    StartCoroutine(Reload());
+                }
+
+                if (Time.time >= attackTimeStamp && Input.GetButton("Fire1") && canFire)
+                {
+                    Shuriken();
+                    attackTimeStamp = Time.time + attackTime;
+
+                    currentAmmo--;
+                }
             }
 
-            if (Time.time >= attackTimeStamp && Input.GetButton("Fire1") && canFire)
+            if (totalAmmo == 0 && currentAmmo == 0 && Input.GetButton("Fire1"))
             {
-                Shuriken();
-                attackTimeStamp = Time.time + attackTime;
-
-                currentAmmo--;
-                totalAmmo--;
-            }
-        }
-
-        if (totalAmmo == 0 && Input.GetButton("Fire1"))
-        {
-            if (!uim.noticePanelActive)
-            {
-                StartCoroutine(uim.NoticePopUp("Out of ammo!", 2));
+                if (!uim.noticePanelActive)
+                {
+                    StartCoroutine(uim.NoticePopUp("Out of ammo!", 2));
+                }
             }
         }
     }
@@ -66,10 +70,12 @@ public class AttackShuriken : MonoBehaviour
         if (totalAmmo >= clipSize)
         {
             currentAmmo += clipSize;
+            totalAmmo -= clipSize;
         }
         else if (totalAmmo < clipSize)
         {
             currentAmmo += totalAmmo;
+            totalAmmo -= totalAmmo;
         }
         else
         {
