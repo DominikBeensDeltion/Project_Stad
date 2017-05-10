@@ -38,12 +38,10 @@ public class UIManager : MonoBehaviour
     [Header("Stats")]
     public GameObject statsPanel;
     public Text statsText;
-    //public Player playerScript;
 
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        //playerScript = player.GetComponent<Player>();
     }
 
     void Update()
