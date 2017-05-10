@@ -25,7 +25,7 @@ public class AttackShuriken : MonoBehaviour
 
     void Update()
     {
-        if (totalAmmo > 0)
+        if (currentAmmo > 0 || totalAmmo > 0)
         {
             if (currentAmmo <= 0 && !isReloading)
             {
@@ -39,11 +39,10 @@ public class AttackShuriken : MonoBehaviour
                 attackTimeStamp = Time.time + attackTime;
 
                 currentAmmo--;
-                totalAmmo--;
             }
         }
 
-        if (totalAmmo == 0 && Input.GetButton("Fire1"))
+        if (totalAmmo == 0 && currentAmmo == 0 && Input.GetButton("Fire1"))
         {
             if (!uim.noticePanelActive)
             {
@@ -66,10 +65,12 @@ public class AttackShuriken : MonoBehaviour
         if (totalAmmo >= clipSize)
         {
             currentAmmo += clipSize;
+            totalAmmo -= clipSize;
         }
         else if (totalAmmo < clipSize)
         {
             currentAmmo += totalAmmo;
+            totalAmmo -= totalAmmo;
         }
         else
         {

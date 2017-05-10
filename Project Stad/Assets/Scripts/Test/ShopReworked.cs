@@ -112,6 +112,14 @@ public class ShopReworked : MonoBehaviour
         exitShopButtonInstantiate.GetComponent<Button>().onClick.AddListener(CloseShopButton);
 
         exitShopButtonReference = exitShopButtonInstantiate;
+
+        List<Transform> buttons = new List<Transform>();
+        foreach (Transform button in scrollViewContent.transform)
+        {
+            buttons.Add(button);
+            button.GetComponent<ShopButtons>().buttonIndex = buttons.Count;
+            //button.GetComponent<ShopButtons>().AssignText();
+        }
     }
 
     public void DestroyButtons()
