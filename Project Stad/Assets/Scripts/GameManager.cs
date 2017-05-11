@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     public bool isAbleToAttack = true;
 
-    public static int money;
+    public static int money = 1000;
 
     private void Start()
     {

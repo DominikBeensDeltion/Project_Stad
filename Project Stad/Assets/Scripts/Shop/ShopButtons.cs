@@ -79,35 +79,88 @@ public class ShopButtons : MonoBehaviour
             switch (buttonIndex)
             {
                 case 1:
-                    player.GetComponent<Entity>().stats.maxHealth += 25;
-                    shopICM.maxHealthCost += shopICM.maxHealthCostIncrease;
-                    children[3].GetComponent<Text>().text = shopICM.maxHealthCost.ToString();
-                    break;
+                    if (GameManager.money >= shopICM.maxHealthCost)
+                    {
+                        player.GetComponent<Entity>().stats.maxHealth += 25;
+                        GameManager.money -= shopICM.maxHealthCost;
+                        shopICM.maxHealthCost += shopICM.maxHealthCostIncrease;
+                        children[3].GetComponent<Text>().text = shopICM.maxHealthCost.ToString();
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
                 case 2:
-                    player.GetComponent<Entity>().stats.attackDamage += 10;
-                    shopICM.attackDamageCost += shopICM.attackDamageCostIncrease;
-                    children[3].GetComponent<Text>().text = shopICM.attackDamageCost.ToString();
-                    break;
+                    if (GameManager.money >= shopICM.attackDamageCost)
+                    {
+
+                        player.GetComponent<Entity>().stats.attackDamage += 10;
+                        GameManager.money -= shopICM.attackDamageCost;
+                        shopICM.attackDamageCost += shopICM.attackDamageCostIncrease;
+                        children[3].GetComponent<Text>().text = shopICM.attackDamageCost.ToString();
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
                 case 3:
-                    player.GetComponent<Entity>().stats.attackRange += 2.5f;
-                    shopICM.attackRangeCost += shopICM.attackRangeCostIncrease;
-                    children[3].GetComponent<Text>().text = shopICM.attackRangeCost.ToString();
-                    break;
+                    if (GameManager.money >= shopICM.attackRangeCost)
+                    {
+
+                        player.GetComponent<Entity>().stats.attackRange += 2.5f;
+                        GameManager.money -= shopICM.attackRangeCost;
+                        shopICM.attackRangeCost += shopICM.attackRangeCostIncrease;
+                        children[3].GetComponent<Text>().text = shopICM.attackRangeCost.ToString();
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
                 case 4:
-                    player.GetComponent<Entity>().stats.moveSpeed += 0.5f;
-                    shopICM.moveSpeedCost += shopICM.moveSpeedCostIncrease;
-                    children[3].GetComponent<Text>().text = shopICM.moveSpeedCost.ToString();
-                    break;
+                    if (GameManager.money >= shopICM.moveSpeedCost)
+                    {
+
+                        player.GetComponent<Entity>().stats.moveSpeed += 0.5f;
+                        GameManager.money -= shopICM.moveSpeedCost;
+                        shopICM.moveSpeedCost += shopICM.moveSpeedCostIncrease;
+                        children[3].GetComponent<Text>().text = shopICM.moveSpeedCost.ToString();
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
                 case 5:
-                    player.GetComponent<Entity>().stats.jumpForce += 0.5f;
-                    shopICM.jumpHeightCost += shopICM.jumpHeightCostIncrease;
-                    children[3].GetComponent<Text>().text = shopICM.jumpHeightCost.ToString();
-                    break;
+                    if (GameManager.money >= shopICM.jumpHeightCost)
+                    {
+
+                        player.GetComponent<Entity>().stats.jumpForce += 0.5f;
+                        GameManager.money -= shopICM.jumpHeightCost;
+                        shopICM.jumpHeightCost += shopICM.jumpHeightCostIncrease;
+                        children[3].GetComponent<Text>().text = shopICM.jumpHeightCost.ToString();
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
                 case 6:
-                    player.GetComponent<Entity>().stats.defence += 2;
-                    shopICM.defenceCost += shopICM.defenceCostIncrease;
-                    children[3].GetComponent<Text>().text = shopICM.defenceCost.ToString();
-                    break;
+                    if (GameManager.money >= shopICM.defenceCost)
+                    {
+
+                        player.GetComponent<Entity>().stats.defence += 2;
+                        GameManager.money -= shopICM.defenceCost;
+                        shopICM.defenceCost += shopICM.defenceCostIncrease;
+                        children[3].GetComponent<Text>().text = shopICM.defenceCost.ToString();
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
             }
 
         }

@@ -39,6 +39,10 @@ public class UIManager : MonoBehaviour
     public GameObject statsPanel;
     public Text statsText;
 
+    [Header("Money")]
+    public GameObject moneyPanel;
+    public Text moneyText;
+
     void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -78,6 +82,8 @@ public class UIManager : MonoBehaviour
                          "Movement Speed: " + player.GetComponent<Entity>().stats.moveSpeed + "\n" +
                          "Jump Height: " + player.GetComponent<Entity>().stats.jumpForce + "\n" +
                          "Defence: " + player.GetComponent<Entity>().stats.defence;
+
+        moneyText.text = "Gold: " + GameManager.money;
     }
 
     internal void StartCoroutine()
