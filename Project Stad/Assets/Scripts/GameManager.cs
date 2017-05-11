@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(money);
         if (Input.GetButton("c"))
         {
             statsPanelAnim.SetBool("StatsPanelActive", true);
